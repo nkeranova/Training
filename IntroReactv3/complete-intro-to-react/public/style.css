@@ -6,7 +6,7 @@
  *    without disabling user zoom.
  */
 
-html {
+ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -521,7 +521,7 @@ pre {
   text-align: left;
 }
 
-// .search > div > a {
+/* // .search > div > a {
 //   width: 30%;
 //   height: 0;
 //   padding-bottom: 19.8%;
@@ -587,7 +587,7 @@ pre {
 // .show-card > div > p {
 //   margin: 0;
 //   font-size: 13px;
-}
+} */
 
 .search > header + div {
   margin-top: 25px;

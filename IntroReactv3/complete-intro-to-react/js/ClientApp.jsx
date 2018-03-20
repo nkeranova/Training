@@ -1,22 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-const ce = React.createElement
+// @flow
 
-const MyTitle = function (props) {
-  return (
-    ce('div', null,
-      ce('h1', { style: { color: props.color } }, props.title))
-  )
-}
+import React from 'react';
+import { render } from 'react-dom';
+// import Perf from 'react-addons-perf';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
-const MyComponent = function () {
-  return ce('div', { id: 'my-component' },
-    ce(MyTitle, { title: 'Game of Thrones', color: 'Aquamarine' }),
-    ce(MyTitle, { title: 'Taboo', color: 'LimeGreen' }),
-    ce(MyTitle, { title: 'Silicon Valley', color: 'DeepBlue' }))
-}
+// window.Perf = Perf;
+// Perf.start();
 
-ReactDOM.render(
-  ce(MyComponent),
-  document.getElementById('app')
-)
+const renderApp = () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
+      document.getElementById('app')
+    );
+  };
+  renderApp();
+  
+  if (module.hot) {
+    module.hot.accept('./App', () => {
+      renderApp();
+    });
+  }
